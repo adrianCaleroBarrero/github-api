@@ -1,0 +1,10 @@
+<ul>
+  <ng-container *ngIf="list?.length === 0; else elseTemplate">
+    <h3><span>Insert a name</span> for search</h3>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <li *ngFor="let user of list">
+      <app-card [user]="user"></app-card>
+    </li>
+  </ng-template>
+</ul>

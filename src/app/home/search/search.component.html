@@ -1,0 +1,10 @@
+<div class="search">
+  <input
+    type="search"
+    name="search"
+    [formControl]="search"
+    (keyup)="sendSearch()"
+    placeholder="Search"
+  />
+  <section *ngIf="loading === true"><mat-spinner></mat-spinner></section>
+</div>

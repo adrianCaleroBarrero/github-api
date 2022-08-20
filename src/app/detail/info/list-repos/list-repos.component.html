@@ -1,0 +1,13 @@
+<ul>
+  <h3>Repositoris</h3>
+
+  <ng-container *ngIf="listOfRepos?.length === 0; else elseTemplate">
+    <mat-spinner></mat-spinner>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <p>{{ public }} publics repositorys</p>
+    <li *ngFor="let repo of listOfRepos">
+      <app-card-repo [repo]="repo"></app-card-repo>
+    </li>
+  </ng-template>
+</ul>

@@ -1,0 +1,11 @@
+<ul>
+  <h3>List followers</h3>
+  <ng-container *ngIf="listOfFollowers?.length === 0; else elseTemplate">
+    <mat-spinner></mat-spinner>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <li *ngFor="let follower of listOfFollowers">
+      <app-card-follower [follower]="follower"></app-card-follower>
+    </li>
+  </ng-template>
+</ul>

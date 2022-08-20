@@ -1,0 +1,27 @@
+<div class="info">
+  <ng-container *ngIf="!userGithub?.avatar_url; else elseTemplate">
+    <mat-spinner></mat-spinner>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div class="general-info">
+      <img src="{{ userGithub?.avatar_url }}" alt="{{ userGithub?.login }}" />
+      <div class="general-info__name&bio">
+        <h2>{{ userGithub?.name }}</h2>
+        <h3>{{ userGithub?.login }}</h3>
+        <p>{{ userGithub?.bio }}</p>
+        <p>🏡: {{ userGithub?.location }}</p>
+      </div>
+
+      <div class="follow">
+        <p>followers: {{ userGithub?.followers }}</p>
+        <p>following: {{ userGithub?.following }}</p>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="lists">
+    <app-list-followers></app-list-followers>
+
+    <app-list-repos [public]="userGithub?.public_repos"></app-list-repos>
+  </div>
+</div>

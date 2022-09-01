@@ -1,9 +1,9 @@
 .card-detail
+  height: 6.5rem
   display: flex
-  justify-content: space-around
   align-items: center
   p
-    width: 60%
+    width: 50%
   .name-languaje
     h5
       color: #3a69a4
@@ -12,3 +12,13 @@
 
 hr
   border: 0.5px solid #b0b8c0
+
+@media only screen and (max-width: 600px)
+  .card-detail
+    .name-languaje
+      display: flex
+      justify-content: start
+      flex-direction: row-reverse
+
+  p
+    display: none

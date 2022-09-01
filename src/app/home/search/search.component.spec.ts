@@ -49,7 +49,7 @@ describe('SearchComponent', () => {
     });
   });
   it('Then it should be call the request service ', () => {
-    spyOn(component.request, 'getSearch').and.returnValue(component.store);
+    spyOn(component.request, 'getSearch').and.returnValue(of([]));
 
     component.search.setValue('pepe');
     fixture.detectChanges();

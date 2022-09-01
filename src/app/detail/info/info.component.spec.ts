@@ -19,6 +19,12 @@ describe('InfoComponent', () => {
         url: 'url',
         followers_url: 'url',
         repos_url: 'url',
+        followers: 1,
+        following: 1,
+        name: 'test',
+        bio: 'test',
+        public_repos: 1,
+        location: 'test',
       },
     ],
     followersGithub: [],
@@ -48,15 +54,16 @@ describe('InfoComponent', () => {
   });
   describe('When i search the user whit the params', () => {
     it('Then I search a user ', () => {
-      spyOn(component.route.paramMap, 'subscribe').and.returnValue(
-        of('1') as unknown as Subscription
+      spyOn(component.store, 'select');
+      component.userGithub = initialState.usersGithub[0];
+
+      spyOn(component.request, 'getAllFollowers').and.returnValue(
+        of(component.store.dispatch)
       );
-      spyOn(component.store, 'subscribe').and.returnValues(
-        of(initialState) as unknown as Subscription
-      );
+      spyOn(component.store, 'dispatch');
       fixture.detectChanges();
 
-      expect(component.store.subscribe).toHaveBeenCalled();
+      expect(component.store.dispatch).toHaveBeenCalled();
     });
   });
 });

@@ -18,13 +18,11 @@ export class RequestServicesService {
 
   getSearch(search: string) {
     return this.http
-      .get<iInfo>(
-        (this.searchUrl + `?q=${search}&page,per_page,sort,order}`) as string
-      )
+      .get<iInfo>((this.searchUrl + `?q=${search}`) as string)
       .pipe(map(this.getInfo));
   }
 
-  private getInfo(resp: iInfo) {
+  getInfo(resp: iInfo) {
     return resp.items.map((searchUser: iUsersGithub) => {
       return {
         login: searchUser.login,

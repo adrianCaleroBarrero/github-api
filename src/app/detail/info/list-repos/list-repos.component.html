@@ -5,7 +5,6 @@
     <mat-spinner></mat-spinner>
   </ng-container>
   <ng-template #elseTemplate>
-    <p>{{ public }} publics repositorys</p>
     <li *ngFor="let repo of listOfRepos">
       <app-card-repo [repo]="repo"></app-card-repo>
     </li>

@@ -7,7 +7,7 @@ import { CardFollowerComponent } from './card-follower.component';
 
 describe('CardFollowerComponent', () => {
   let mockInitialState = {
-    usersGithub: [],
+    usersGithub: [{ id: 1, avatar_url: 'url', login: 'test' }],
     followersGithub: [],
     reposGithub: [],
   };

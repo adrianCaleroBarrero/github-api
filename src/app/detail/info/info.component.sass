@@ -24,3 +24,23 @@ header
   display: flex
   p
     margin: 0 1rem
+
+@media only screen and (max-width: 600px)
+  body
+    max-width: 70%
+  .info
+    display: flex
+    flex-direction: column
+    .general-info
+      display: flex
+      align-items: center
+      text-align: center
+      margin-left: 3rem
+      .general-info__name-bio
+        align-self: center
+
+    .list
+      max-width: 600px
+    .follow
+      p
+        margin: 0 1rem 0 0

@@ -9,6 +9,6 @@ import { iReposGithub } from 'src/app/models/users-github.model';
 export class CardRepoComponent implements OnInit {
   constructor() {}
   @Input()
-  repo!: iReposGithub;
+  repo: iReposGithub | undefined;
   ngOnInit(): void {}
 }

@@ -1,8 +1,12 @@
 ul
+  margin: 0.6rem
   display: flex
   flex-direction: column
   text-align: center
   list-style: none
+  padding: 0
+  li
+    height: 15%
 
   h3
     padding: 1.3rem
@@ -12,3 +16,9 @@ ul
     margin-bottom: 3rem
   p
     color: #3a69a4
+
+@media only screen and (max-width: 600px)
+  ul
+    width: 55%
+    p
+      display: none

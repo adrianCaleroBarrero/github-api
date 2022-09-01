@@ -13,6 +13,7 @@ import { iUser } from '../models/users-github.model';
 })
 export class DetailComponent implements OnInit {
   public loginName: string | null = '';
+  public param: string | undefined;
   constructor(
     public route: ActivatedRoute,
     public request: RequestServicesService,
@@ -20,9 +21,9 @@ export class DetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(
-      (param) => (this.loginName = param.get('login'))
-    );
+    this.route.paramMap.subscribe((param) => {
+      this.loginName = param.get('login');
+    });
 
     this.request.getOneUser(this.loginName as string).subscribe({
       next: (data) =>

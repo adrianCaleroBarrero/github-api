@@ -1,9 +1,9 @@
 <div class="card-detail">
   <div class="name-languaje">
-    <h5>{{ repo.name }}</h5>
-    <h5>{{ repo.language }}</h5>
+    <h5 *ngIf="repo?.name">{{ repo?.name }}</h5>
+    <h5 *ngIf="repo?.language">{{ repo?.language }}</h5>
   </div>
 
-  <p>{{ repo.description }}</p>
+  <p>{{ repo?.description }}</p>
 </div>
 <hr />

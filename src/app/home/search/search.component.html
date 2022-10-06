@@ -3,8 +3,10 @@
     type="search"
     name="search"
     [formControl]="search"
-    (keyup)="sendSearch()"
     placeholder="Search"
   />
+  <button (click)="sendSearch()">
+    <img src="../../../assets/icons8-search-90.png" alt="search" />
+  </button>
   <section *ngIf="loading === true"><mat-spinner></mat-spinner></section>
 </div>

@@ -27,6 +27,7 @@ export interface iUser {
   following: number;
   name: string;
   bio: string;
+  company: string;
   followers_url: string;
   public_repos: number;
   location: string;

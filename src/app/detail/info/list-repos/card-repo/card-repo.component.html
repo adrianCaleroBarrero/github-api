@@ -1,9 +1,9 @@
-<div class="card-detail">
-  <div class="name-languaje">
-    <h5 *ngIf="repo?.name">{{ repo?.name }}</h5>
-    <h5 *ngIf="repo?.language">{{ repo?.language }}</h5>
-  </div>
-
-  <p>{{ repo?.description }}</p>
-</div>
-<hr />
+<mat-card class="card-repo">
+  <mat-card-title *ngIf="repo?.name">{{ repo?.name }}</mat-card-title>
+  <mat-card-subtitle *ngIf="repo?.language" style="color: #2a9d8f">{{
+    repo?.language
+  }}</mat-card-subtitle>
+  <mat-card-content *ngIf="repo?.description">{{
+    repo?.description
+  }}</mat-card-content>
+</mat-card>

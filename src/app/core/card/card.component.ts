@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { iUser } from 'src/app/models/users-github.model';
 
 @Component({
@@ -7,8 +8,11 @@ import { iUser } from 'src/app/models/users-github.model';
   styleUrls: ['./card.component.sass'],
 })
 export class CardComponent implements OnInit {
-  constructor() {}
-  @Input()
-  user!: iUser;
+  constructor(public router: Router) {}
+  @Input() user: iUser | undefined;
   ngOnInit(): void {}
+  async onRefresh() {
+    await this.router.navigate([`/detail/${this.user?.login}`]);
+    window.location.reload();
+  }
 }

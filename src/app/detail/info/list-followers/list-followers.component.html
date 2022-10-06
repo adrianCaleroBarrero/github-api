@@ -4,8 +4,8 @@
     <mat-spinner></mat-spinner>
   </ng-container>
   <ng-template #elseTemplate>
-    <li *ngFor="let follower of listOfFollowers">
-      <app-card-follower [follower]="follower"></app-card-follower>
+    <li *ngFor="let user of listOfFollowers">
+      <app-card [user]="user"></app-card>
     </li>
   </ng-template>
 </ul>

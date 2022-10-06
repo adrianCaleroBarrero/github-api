@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { iUsersGithub } from 'src/app/models/users-github.model';
+import { iUser, iUsersGithub } from 'src/app/models/users-github.model';
 import { iAppState } from 'src/app/rx/app.state';
 
 @Component({
@@ -10,7 +10,7 @@ import { iAppState } from 'src/app/rx/app.state';
 })
 export class ListFollowersComponent implements OnInit {
   public isSearching = true;
-  public listOfFollowers: iUsersGithub[] = [];
+  public listOfFollowers: iUser[] = [];
   constructor(public store: Store<iAppState>) {}
 
   ngOnInit(): void {
@@ -18,8 +18,7 @@ export class ListFollowersComponent implements OnInit {
       .select((state) => state.followersGithub)
       .subscribe({
         next: (data) => {
-          this.listOfFollowers =
-            data.followersGithub as unknown as iUsersGithub[];
+          this.listOfFollowers = data.followersGithub as unknown as iUser[];
         },
       });
   }

@@ -5,16 +5,17 @@ import { ListComponent } from './list/list.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CardComponent } from './list/card/card.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
-  declarations: [HomeComponent, ListComponent, SearchComponent, CardComponent],
+  declarations: [HomeComponent, ListComponent, SearchComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    CoreModule,
   ],
 })
 export class HomeModule {}
